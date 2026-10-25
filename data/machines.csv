@@ -1,0 +1,25 @@
+machine_id,type,days_since_maintenance
+STAM-01,Stamping press,23
+STAM-02,Stamping press,126
+STAM-03,Stamping press,108
+STAM-04,Stamping press,76
+WELD-01,Welding robot,75
+WELD-02,Welding robot,139
+WELD-03,Welding robot,22
+WELD-04,Welding robot,115
+WELD-05,Welding robot,40
+WELD-06,Welding robot,24
+WELD-07,Welding robot,89
+WELD-08,Welding robot,157
+PAIN-01,Paint robot,121
+PAIN-02,Paint robot,124
+PAIN-03,Paint robot,118
+CONV-01,Conveyor drive,128
+CONV-02,Conveyor drive,87
+CONV-03,Conveyor drive,29
+CONV-04,Conveyor drive,136
+CONV-05,Conveyor drive,78
+CNC-01,CNC machining,85
+CNC-02,CNC machining,65
+CNC-03,CNC machining,37
+CNC-04,CNC machining,149

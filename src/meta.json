@@ -1,0 +1,51 @@
+{
+  "num": "09",
+  "area": "Operations",
+  "product": "Predictive Maintenance",
+  "title": "Ford Line Health Monitor",
+  "company": "Ford Motor Company",
+  "why": "A Ford assembly plant depends on presses, welding robots and conveyors, and one unplanned breakdown can stop the whole line. This tool reads machine sensors, predicts which machine fails next and books the repair into planned downtime.",
+  "problem": "Unexpected equipment failures are causing production downtime and increasing maintenance costs. Develop an AI system that analyzes machine sensor data, maintenance history and production schedules to identify failure patterns and recommend preventive maintenance actions.",
+  "data_note": "24 machines on one body-and-assembly line, 120 days of daily sensor readings and 3 years of failure history (sample data).",
+  "steps": [
+    {
+      "step": "Collect sensor and maintenance data",
+      "detail": "Vibration, temperature, motor current, work orders, schedule"
+    },
+    {
+      "step": "Build health features",
+      "detail": "Each sensor vs the machine's own healthy baseline (z-score)"
+    },
+    {
+      "step": "Anomaly detection",
+      "detail": "Health index from combined z-scores, flag above 3"
+    },
+    {
+      "step": "Remaining useful life",
+      "detail": "Trend of the health index to the failure level"
+    },
+    {
+      "step": "7-day failure probability",
+      "detail": "Logistic model trained on past failure windows"
+    },
+    {
+      "step": "Failure patterns",
+      "detail": "K-means on past failure signatures"
+    },
+    {
+      "step": "Schedule maintenance",
+      "detail": "Book each job into the last planned window before failure"
+    },
+    {
+      "step": "Work orders",
+      "detail": "AI analyst drafts technician instructions"
+    }
+  ],
+  "questions": [
+    "Which machine should we fix first?",
+    "What is causing most failures on this line?",
+    "Write a work order for the top-risk machine",
+    "How much money does this plan save?"
+  ],
+  "author": "K Mohan Kumar"
+}

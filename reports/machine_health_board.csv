@@ -1,0 +1,25 @@
+machine_id,type,health_index,failure_prob_7d,days_to_failure,signal,repair_hours
+STAM-03,Stamping press,11.4,0.987,0.0,Vibration rising: bearing or alignment wear,6
+CONV-05,Conveyor drive,4.84,0.376,14.0,Current rising: motor or electrical fault,3
+WELD-06,Welding robot,4.58,0.223,23.0,Temperature rising: cooling or lubrication fault,4
+PAIN-03,Paint robot,2.45,0.1,52.0,Vibration rising: bearing or alignment wear,6
+CNC-03,CNC machining,2.18,0.048,104.0,Temperature rising: cooling or lubrication fault,4
+WELD-02,Welding robot,1.06,0.035,,Normal,3
+CONV-01,Conveyor drive,0.63,0.028,,Normal,3
+STAM-02,Stamping press,0.48,0.027,,Normal,4
+STAM-04,Stamping press,1.04,0.025,,Normal,3
+WELD-01,Welding robot,1.01,0.024,,Normal,4
+WELD-03,Welding robot,1.34,0.022,,Normal,3
+CNC-04,CNC machining,0.6,0.022,,Normal,6
+WELD-08,Welding robot,0.84,0.022,,Normal,6
+STAM-01,Stamping press,1.32,0.02,,Normal,3
+WELD-07,Welding robot,0.6,0.017,,Normal,4
+PAIN-02,Paint robot,0.34,0.017,,Normal,4
+WELD-04,Welding robot,0.21,0.016,,Normal,3
+PAIN-01,Paint robot,0.17,0.014,,Normal,6
+CNC-02,CNC machining,0.3,0.014,,Normal,4
+CONV-04,Conveyor drive,0.12,0.013,,Normal,4
+CNC-01,CNC machining,0.05,0.01,,Normal,6
+CONV-03,Conveyor drive,0.4,0.007,,Normal,4
+CONV-02,Conveyor drive,0.38,0.004,,Normal,6
+WELD-05,Welding robot,0.03,0.003,,Normal,6

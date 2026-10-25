@@ -1,0 +1,4 @@
+machine_id,type,failure_prob_7d,days_to_failure,signal,repair_hours,book_into
+STAM-03,Stamping press,0.987,0.0,Vibration rising: bearing or alignment wear,6,Stop now
+CONV-05,Conveyor drive,0.376,14.0,Current rising: motor or electrical fault,3,"Day 8, Midweek gap"
+WELD-06,Welding robot,0.223,23.0,Temperature rising: cooling or lubrication fault,4,"Day 19, Sunday shutdown"

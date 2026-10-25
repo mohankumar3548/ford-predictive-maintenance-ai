@@ -1,0 +1,331 @@
+{
+  "title": "Ford Line Health Monitor",
+  "company": "Ford Motor Company",
+  "kpis": [
+    {
+      "label": "Machines at risk",
+      "value": "3",
+      "note": "of 24 on the line"
+    },
+    {
+      "label": "Highest 7-day risk",
+      "value": "99%",
+      "note": "STAM-03, Stamping press"
+    },
+    {
+      "label": "Downtime avoided",
+      "value": "51 hrs",
+      "note": "Unplanned stops turned into planned work"
+    },
+    {
+      "label": "Saving",
+      "value": "$6.1M",
+      "note": "At $120K per downtime hour"
+    }
+  ],
+  "algorithm": [
+    {
+      "step": "Collect sensor and maintenance data",
+      "output": "24 machines x 120 days, 2,600 historical windows"
+    },
+    {
+      "step": "Build health features",
+      "output": "3 sensor z-scores per machine-day vs its first 30 days"
+    },
+    {
+      "step": "Anomaly detection",
+      "output": "3 machines with health index above 3"
+    },
+    {
+      "step": "Remaining useful life",
+      "output": "Shortest remaining life: STAM-03 at 0 days"
+    },
+    {
+      "step": "7-day failure probability",
+      "output": "Model AUC 0.901; top risk STAM-03 at 99%"
+    },
+    {
+      "step": "Failure patterns",
+      "output": "Bearing and alignment wear 46%, Overheating 29%, Electrical and motor faults 24%"
+    },
+    {
+      "step": "Schedule maintenance",
+      "output": "3 jobs booked, 1 needing an immediate stop"
+    },
+    {
+      "step": "Work orders",
+      "output": "Ready"
+    }
+  ],
+  "tables": {
+    "Maintenance schedule": [
+      {
+        "machine_id": "STAM-03",
+        "type": "Stamping press",
+        "failure_prob_7d": 0.987,
+        "days_to_failure": 0.0,
+        "signal": "Vibration rising: bearing or alignment wear",
+        "repair_hours": 6,
+        "book_into": "Stop now"
+      },
+      {
+        "machine_id": "CONV-05",
+        "type": "Conveyor drive",
+        "failure_prob_7d": 0.376,
+        "days_to_failure": 14.0,
+        "signal": "Current rising: motor or electrical fault",
+        "repair_hours": 3,
+        "book_into": "Day 8, Midweek gap"
+      },
+      {
+        "machine_id": "WELD-06",
+        "type": "Welding robot",
+        "failure_prob_7d": 0.223,
+        "days_to_failure": 23.0,
+        "signal": "Temperature rising: cooling or lubrication fault",
+        "repair_hours": 4,
+        "book_into": "Day 19, Sunday shutdown"
+      }
+    ],
+    "Machine health board": [
+      {
+        "machine_id": "STAM-03",
+        "type": "Stamping press",
+        "health_index": 11.4,
+        "failure_prob_7d": 0.987,
+        "days_to_failure": 0.0,
+        "signal": "Vibration rising: bearing or alignment wear",
+        "repair_hours": 6
+      },
+      {
+        "machine_id": "CONV-05",
+        "type": "Conveyor drive",
+        "health_index": 4.84,
+        "failure_prob_7d": 0.376,
+        "days_to_failure": 14.0,
+        "signal": "Current rising: motor or electrical fault",
+        "repair_hours": 3
+      },
+      {
+        "machine_id": "WELD-06",
+        "type": "Welding robot",
+        "health_index": 4.58,
+        "failure_prob_7d": 0.223,
+        "days_to_failure": 23.0,
+        "signal": "Temperature rising: cooling or lubrication fault",
+        "repair_hours": 4
+      },
+      {
+        "machine_id": "PAIN-03",
+        "type": "Paint robot",
+        "health_index": 2.45,
+        "failure_prob_7d": 0.1,
+        "days_to_failure": 52.0,
+        "signal": "Vibration rising: bearing or alignment wear",
+        "repair_hours": 6
+      },
+      {
+        "machine_id": "CNC-03",
+        "type": "CNC machining",
+        "health_index": 2.18,
+        "failure_prob_7d": 0.048,
+        "days_to_failure": 104.0,
+        "signal": "Temperature rising: cooling or lubrication fault",
+        "repair_hours": 4
+      },
+      {
+        "machine_id": "WELD-02",
+        "type": "Welding robot",
+        "health_index": 1.06,
+        "failure_prob_7d": 0.035,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 3
+      },
+      {
+        "machine_id": "CONV-01",
+        "type": "Conveyor drive",
+        "health_index": 0.63,
+        "failure_prob_7d": 0.028,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 3
+      },
+      {
+        "machine_id": "STAM-02",
+        "type": "Stamping press",
+        "health_index": 0.48,
+        "failure_prob_7d": 0.027,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 4
+      },
+      {
+        "machine_id": "STAM-04",
+        "type": "Stamping press",
+        "health_index": 1.04,
+        "failure_prob_7d": 0.025,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 3
+      },
+      {
+        "machine_id": "WELD-01",
+        "type": "Welding robot",
+        "health_index": 1.01,
+        "failure_prob_7d": 0.024,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 4
+      },
+      {
+        "machine_id": "WELD-03",
+        "type": "Welding robot",
+        "health_index": 1.34,
+        "failure_prob_7d": 0.022,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 3
+      },
+      {
+        "machine_id": "CNC-04",
+        "type": "CNC machining",
+        "health_index": 0.6,
+        "failure_prob_7d": 0.022,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 6
+      },
+      {
+        "machine_id": "WELD-08",
+        "type": "Welding robot",
+        "health_index": 0.84,
+        "failure_prob_7d": 0.022,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 6
+      },
+      {
+        "machine_id": "STAM-01",
+        "type": "Stamping press",
+        "health_index": 1.32,
+        "failure_prob_7d": 0.02,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 3
+      },
+      {
+        "machine_id": "WELD-07",
+        "type": "Welding robot",
+        "health_index": 0.6,
+        "failure_prob_7d": 0.017,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 4
+      },
+      {
+        "machine_id": "PAIN-02",
+        "type": "Paint robot",
+        "health_index": 0.34,
+        "failure_prob_7d": 0.017,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 4
+      },
+      {
+        "machine_id": "WELD-04",
+        "type": "Welding robot",
+        "health_index": 0.21,
+        "failure_prob_7d": 0.016,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 3
+      },
+      {
+        "machine_id": "PAIN-01",
+        "type": "Paint robot",
+        "health_index": 0.17,
+        "failure_prob_7d": 0.014,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 6
+      },
+      {
+        "machine_id": "CNC-02",
+        "type": "CNC machining",
+        "health_index": 0.3,
+        "failure_prob_7d": 0.014,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 4
+      },
+      {
+        "machine_id": "CONV-04",
+        "type": "Conveyor drive",
+        "health_index": 0.12,
+        "failure_prob_7d": 0.013,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 4
+      },
+      {
+        "machine_id": "CNC-01",
+        "type": "CNC machining",
+        "health_index": 0.05,
+        "failure_prob_7d": 0.01,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 6
+      },
+      {
+        "machine_id": "CONV-03",
+        "type": "Conveyor drive",
+        "health_index": 0.4,
+        "failure_prob_7d": 0.007,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 4
+      },
+      {
+        "machine_id": "CONV-02",
+        "type": "Conveyor drive",
+        "health_index": 0.38,
+        "failure_prob_7d": 0.004,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 6
+      },
+      {
+        "machine_id": "WELD-05",
+        "type": "Welding robot",
+        "health_index": 0.03,
+        "failure_prob_7d": 0.003,
+        "days_to_failure": null,
+        "signal": "Normal",
+        "repair_hours": 6
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "title": "STAM-03: bearing or alignment wear",
+      "body": "Stamping press at 99% risk of failing within 7 days. No planned window comes early enough; stop at the next shift change.",
+      "impact": "Stop now"
+    },
+    {
+      "title": "CONV-05: motor or electrical fault",
+      "body": "Conveyor drive at 38% risk of failing within 7 days. Book the 3-hour job into day 8, midweek gap.",
+      "impact": "Day 8, Midweek gap"
+    },
+    {
+      "title": "WELD-06: cooling or lubrication fault",
+      "body": "Welding robot at 22% risk of failing within 7 days. Book the 4-hour job into day 19, sunday shutdown.",
+      "impact": "Day 19, Sunday shutdown"
+    },
+    {
+      "title": "Target bearing and alignment wear across the line",
+      "body": "46% of past failures follow this pattern. Add checks for it to every Sunday shutdown.",
+      "impact": "Prevent repeats"
+    }
+  ]
+}
